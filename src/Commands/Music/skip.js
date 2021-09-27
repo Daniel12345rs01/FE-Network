@@ -10,19 +10,19 @@ module.exports = class skip extends Command {
         })
     }
     async run(message) {
-        if(message.channel.name != 'musik') return message.reply("Wrong channel mate.... Please use #musik");
+        if(message.channel.name != 'musik') return message.reply("Forkert kanal bror/søster brug #musik");
         const player = message.client.manager.get(message.guild.id);
-        if (!player) return message.reply("there is no player for this guild.");
+        if (!player) return message.reply("Der er ingen spiller i denne klub.");
 
         const { channel } = message.member.voice;
-        if (!channel) return message.reply("you need to join a voice channel.");
-        if (channel.id !== player.voiceChannel) return message.reply("you're not in the same voice channel.");
+        if (!channel) return message.reply("Du mangler at tilslutte en talekanal.");
+        if (channel.id !== player.voiceChannel) return message.reply("Du er ikke i den samme talekanal.");
 
-        if (!player.queue.current) return message.reply("there is no music playing.")
+        if (!player.queue.current) return message.reply("der afspilles ingen musik.")
 
         const { title } = player.queue.current;
 
         player.stop();
-        return message.reply(`${title} was skipped.`)
+        return message.reply(`${title} blev skippet.`)
     }
 };
