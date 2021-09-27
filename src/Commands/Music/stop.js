@@ -10,16 +10,16 @@ module.exports = class stop extends Command {
         })
     }
     async run(message) {
-        if(message.channel.name != 'musik') return message.reply("Wrong channel mate.... Please use #musik");
+        if(message.channel.name != 'musik') return message.reply("Forkert kanal bror/søster brug #musik");
         const player = message.client.manager.get(message.guild.id);
-        if (!player) return message.reply("there is no player for this guild.");
+        if (!player) return message.reply("Der er ingen spiller i denne klub.");
 
         const { channel } = message.member.voice;
 
-        if (!channel) return message.reply("you need to join a voice channel.");
-        if (channel.id !== player.voiceChannel) return message.reply("you're not in the same voice channel.");
+        if (!channel) return message.reply("Du mangler at tilslutte en talekanal.");
+        if (channel.id !== player.voiceChannel) return message.reply("Du er ikke i den samme talekanal.");
 
         player.destroy();
-        return message.reply("destroyed the player.");
+        return message.reply("dræbte musikken.");
     }
 };
