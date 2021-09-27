@@ -1,3 +1,4 @@
+const { MessageEmbed } = require('discord.js');
 const Command = require('../../Structures/Command');
 
 module.exports = class play extends Command {
@@ -62,7 +63,11 @@ module.exports = class play extends Command {
                     .map((track, index) => `${++index} - \`${track.title}\``)
                     .join('\n');
 
-                message.channel.send(results);
+                const embed = new MessageEmbed()
+                    .setAuthor(message.author.tag + " select a track")
+                    .setDescription(results);
+
+                message.channel.send(embed);
 
                 try {
                     collected = await message.channel.awaitMessages(filter, { max: 1, time: 30e3, errors: ['time'] });
@@ -85,7 +90,11 @@ module.exports = class play extends Command {
                 player.queue.add(track);
 
                 if (!player.playing && !player.paused && !player.queue.size) await player.play();
-                return message.reply(`enqueuing \`${track.title}\`.`);
+                
+                const enqueingEmbed = new MessageEmbed()
+                    .setAuthor(`enqueuing \`${track.title}\`.`)
+                    .setDescription("Requested by " + message.author.tag)
+                return message.channel.send(enqueingEmbed);
         }
     }
 };
