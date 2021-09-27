@@ -1,0 +1,28 @@
+{
+  "name": "vinci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vinci-Development/Vinci.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vinci-Development/Vinci/issues"
+  },
+  "homepage": "https://github.com/Vinci-Development/Vinci#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "erela.js": "^2.3.2",
+    "glob": "^7.2.0",
+    "path": "^0.12.7",
+    "pm2": "^5.1.2",
+    "util": "^0.12.4"
+  }
+}
