@@ -13,11 +13,11 @@ module.exports = class extends Command {
 	}
 
 	async run(message, [command]) {
-		if(message.channel.name != 'musik') return message.reply("Wrong channel mate.... Please use #musik");
+		if(message.channel.name != 'musik') return message.reply("Forkert kanal bror/søster brug #musik");
 
 		const embed = new MessageEmbed()
 			.setColor('BLUE')
-			.setAuthor(`${message.guild.name} Help Menu`, message.guild.iconURL({ dynamic: true }))
+			.setAuthor(`${message.guild.name} Hjælpe Menu`, message.guild.iconURL({ dynamic: true }))
 			.setThumbnail(this.client.user.displayAvatarURL())
 			.setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
 			.setTimestamp();
@@ -38,9 +38,9 @@ module.exports = class extends Command {
 			return message.channel.send(embed);
 		} else {
 			embed.setDescription([
-				`These are the available commands for ${message.guild.name}`,
+				`Disse kommandoer er tilgængelige for ${message.guild.name}`,
 				`The bot's prefix is: ${this.client.prefix}`,
-				`Command Parameters: \`<>\` is strict & \`[]\` is optional`
+				`Kommandoparametre: \`<>\` er tvunget & \`[]\` er valgfri`
 			]);
 			let categories;
 			if (!this.client.owners.includes(message.author.id)) {
