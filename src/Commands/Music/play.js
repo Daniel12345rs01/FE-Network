@@ -13,6 +13,8 @@ module.exports = class play extends Command {
     }
     async run(message, args) {
         let channel = message.member.voice.channel;
+
+        if(message.channel.name != 'musik') return message.reply("Wrong channel mate.... Please use #musik");
         if (!channel)return message.reply("I'm sorry but you need to be in a voice channel to play music!", message.channel);
 
         const permissions = channel.permissionsFor(message.client.user);

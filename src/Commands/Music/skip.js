@@ -10,6 +10,7 @@ module.exports = class skip extends Command {
         })
     }
     async run(message) {
+        if(message.channel.name != 'musik') return message.reply("Wrong channel mate.... Please use #musik");
         const player = message.client.manager.get(message.guild.id);
         if (!player) return message.reply("there is no player for this guild.");
 

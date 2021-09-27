@@ -3,9 +3,6 @@ const Event = require('../../Structures/Event');
 module.exports = class extends Event {
 
 	async run(message) {
-
-		if(message.channel.id != '394278530248343552') return message.reply("Wrong channel mate #music");
-		
 		const mentionRegex = RegExp(`^<@!?${this.client.user.id}>$`);
 		const mentionRegexPrefix = RegExp(`^<@!?${this.client.user.id}> `);
 

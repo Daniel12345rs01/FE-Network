@@ -13,6 +13,8 @@ module.exports = class extends Command {
 	}
 
 	async run(message, [command]) {
+		if(message.channel.name != 'musik') return message.reply("Wrong channel mate.... Please use #musik");
+
 		const embed = new MessageEmbed()
 			.setColor('BLUE')
 			.setAuthor(`${message.guild.name} Help Menu`, message.guild.iconURL({ dynamic: true }))
