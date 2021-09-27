@@ -45,7 +45,7 @@ module.exports = class extends Event {
 
 		this.client.manager.on("trackStart", (player, track) => {
 			const channel = this.client.channels.cache.get(player.textChannel);
-			channel.send(`Now playing: \`${track.title}\`, requested by \`${track.requester.tag}\`.`);
+			channel.send(`Afspiller nu: \`${track.title}\`, anmodet af \`${track.requester.tag}\`.`);
 		});
 
 		this.client.manager.on("queueEnd", player => {
