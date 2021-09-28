@@ -7,7 +7,7 @@ module.exports = class extends Event {
 		const mentionRegexPrefix = RegExp(`^<@!?${this.client.user.id}> `);
 
 		if (message.author.bot) return;
-		if (message.content.match(mentionRegex)) message.channel.send(`My prefix for ${message.guild.name} is \`${this.client.prefix}\`.`);
+		if (message.content.match(mentionRegex)) message.channel.send(`Mit prefix for ${message.guild.name} er \`${this.client.prefix}\`.`);
 
 		const prefix = message.content.match(mentionRegexPrefix) ?
 			message.content.match(mentionRegexPrefix)[0] : this.client.prefix;
@@ -20,20 +20,20 @@ module.exports = class extends Event {
 		if (command) {
 
 			if (command.ownerOnly && !this.client.utils.checkOwner(message.author.id)) {
-				return message.reply('Sorry, you do not have access to this command!');
+				return message.reply('Ups, du har ikke adgang til denne kommando!');
 			}
 
 			if (command.guildOnly && !message.guild) {
-				return message.reply('Sorry, this command can only be used in a discord server.');
+				return message.reply('Ups, denne kommando virker kun på en Discord server.');
 			}
 
 			if (command.nsfw && !message.channel.nsfw) {
-				return message.reply('Sorry, this command can only be ran in a NSFW marked channel.');
+				return message.reply('Ups, denne kommando virker kun i en NSFW mærket kanal.');
 			}
 
 			if (command.args && !args.length) {
-				return message.reply(`Sorry, this command requires arguments to function. Usage: ${command.usage ?
-					`${this.client.prefix + command.name} ${command.usage}` : 'This command doesn\'t have a usage format'}`);
+				return message.reply(`Ups, denne kommando kræver argumenter for at fungere. Anvendelse: ${command.usage ?
+					`${this.client.prefix + command.name} ${command.usage}` : 'Denne kommando har ikke et brugsformat'}`);
 			}
 
 			if (message.guild) {
@@ -41,7 +41,7 @@ module.exports = class extends Event {
 				if (userPermCheck) {
 					const missing = message.channel.permissionsFor(message.member).missing(userPermCheck);
 					if (missing.length) {
-						return message.reply(`You are missing ${this.client.utils.formatArray(missing.map(this.client.utils.formatPerms))} permissions, you need them to use this command!`);
+						return message.reply(`Du mangler ${this.client.utils.formatArray(missing.map(this.client.utils.formatPerms))} permissions, Du mangler for at køre denne kommando!`);
 					}
 				}
 
@@ -49,7 +49,7 @@ module.exports = class extends Event {
 				if (botPermCheck) {
 					const missing = message.channel.permissionsFor(this.client.user).missing(botPermCheck);
 					if (missing.length) {
-						return message.reply(`I am missing ${this.client.utils.formatArray(missing.map(this.client.utils.formatPerms))} permissions, I need them to run this command!`);
+						return message.reply(`Jeg mangler ${this.client.utils.formatArray(missing.map(this.client.utils.formatPerms))} permissions, Jeg mangler for at køre denne kommando!`);
 					}
 				}
 			}
