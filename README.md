@@ -1,4 +1,4 @@
-﻿# Fe-Network
+﻿# FE-Network
 
 <div align="center">
     <a href="https://discord.gg/coming soon">
@@ -18,10 +18,10 @@
 
 ## Info
 
-Fe-Network is Fe-Networks' guild-bound music bot.
+FE-Network is FE-Networks' guild-bound music bot.
 
-This bot is strictly open-source so that people can assist with making Fe-Network the best it can be.
-The aim of this open-source project is to enable the assistance of the members within the Fe-Network guild. Any member is welcome to send through their own pull requests with improved code.  
+This bot is strictly open-source so that people can assist with making FE-Network the best it can be.
+The aim of this open-source project is to enable the assistance of the members within the FE-Network guild. Any member is welcome to send through their own pull requests with improved code.  
 _Anybody that contributes to the bot will be shown in the contributors section below with their twitter or relevant social linked._
 
 - We will not provide support for the self-hosting of this code.
@@ -32,14 +32,14 @@ _Anybody that contributes to the bot will be shown in the contributors section b
 - [Discord.js](https://www.npmjs.com/package/discord.js) - A powerful JavaScript library to interact with Discord API
 ## Links
 
-Here are some links that are associated with Fe-Network:
+Here are some links that are associated with FE-Network:
 - [Discord](https://discord.gg/3MRm8cQNWH "Link to the official Discord Server.")
 - [Facebook](https://www.facebook.com/frostruphave "Link to the official facebook page.")
 - [Website](https://frostruphave.dk "Link to the official Website.")
 
 ## Dev Team
 
-- [**Fe-Network**](https://github.com/Fe-Network "Fe-Networks' github accout")
+- [**FE-Network**](https://github.com/Fe-Network "FE-Networks' github accout")
 - [**Toby**](https://github.com/DaatUserName "Toby's github account")
 - [**Daniel12345rs01**](https://github.com/Daniel12345rs01 "Daniel12345rs01's github account")
 ## Contributors
