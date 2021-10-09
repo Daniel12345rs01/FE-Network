@@ -39,7 +39,7 @@ module.exports = class extends Command {
 		} else {
 			embed.setDescription([
 				`Disse kommandoer er tilgængelige for ${message.guild.name}`,
-				`The bot's prefix is: ${this.client.prefix}`,
+				`Bottens prefix er ?: ${this.client.prefix}`,
 				`Kommandoparametre: \`<>\` er tvunget & \`[]\` er valgfri`
 			]);
 			let categories;
