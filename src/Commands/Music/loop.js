@@ -10,23 +10,23 @@ module.exports = class loop extends Command {
         })
     }
     async run(message, args) {
-        if(message.channel.name != 'musik') return message.reply("Wrong channel mate.... Please use #musik");
+        if(message.channel.name != 'musik') return message.reply("Forkert kanal bror/søster brug #musik");
         const player = message.client.manager.get(message.guild.id);
-        if (!player) return message.reply("there is no player for this guild.");
+        if (!player) return message.reply("Der er ingen spiller i denne klub.");
 
         const { channel } = message.member.voice;
 
-        if (!channel) return message.reply("you need to join a voice channel.");
-        if (channel.id !== player.voiceChannel) return message.reply("you're not in the same voice channel.");
+        if (!channel) return message.reply("Du mangler at tilslutte en talekanal.");
+        if (channel.id !== player.voiceChannel) return message.reply("Du er ikke i den samme talekanal.");
 
         if (args.length && /queue/i.test(args[0])) {
             player.setQueueRepeat(!player.queueRepeat);
-            const queueRepeat = player.queueRepeat ? "enabled" : "disabled";
-            return message.reply(`${queueRepeat} queue repeat.`);
+            const queueRepeat = player.queueRepeat ? "aktivere" : "deaktive";
+            return message.reply(`${queueRepeat} kø gentagelse.`);
         }
 
         player.setTrackRepeat(!player.trackRepeat);
-        const trackRepeat = player.trackRepeat ? "enabled" : "disabled";
-        return message.reply(`${trackRepeat} track repeat.`);
+        const trackRepeat = player.trackRepeat ? "aktivere" : "deaktive";
+        return message.reply(`${trackRepeat} track gentagelse.`);
     }
 };
